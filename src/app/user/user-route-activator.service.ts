@@ -14,17 +14,8 @@ export class UserRouteActivator implements CanActivate {
     if (userNotExists) {
       this.router.navigate(['/404']);
     }
-    return userNotExists;
+    return true;
   }
 }
 
-// tslint:disable-next-line:max-line-length
-  /* const userLogged = (!!this.authService.currentUser.firstName === undefined); // !! is to cast the const to boolean - but it works like true
-
-    if (!userLogged) {
-      this.router.navigate(['/404']);
-    }
-    return userLogged;
-  }
-*/
 
