@@ -1,6 +1,9 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { IEvent } from './shared';
+
 
 @Component({
+
   // tslint:disable-next-line:component-selector
   selector: 'event-thumbnail',
   template: `
@@ -12,7 +15,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
        <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
        <span *ngSwitchDefault>(Normal Start)</span>
      </div>
-    <div>Price: \${{event.price}}</div>eddddsdas
+    <div>Price: \${{event.price}}</div>
     <div [hidden]="!event?.location">
       <span>Location: {{event?.location?.address}}</span>
       <span class="pad-left">{{event?.location?.city}}, {{event?.location?.country}}</span>
@@ -32,7 +35,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 
 export class EventThumbnailComponent {
-  @Input() event: any;
+  @Input() event: IEvent;
   @Output() eventClick = new EventEmitter();
 
 
