@@ -16,6 +16,7 @@ export class CreateSessionComponent implements OnInit {
   level: FormControl;
   abstract: FormControl;
   @Output() saveNewSession = new EventEmitter();
+  @Output() cancelAddSession = new EventEmitter();
 
 
   ngOnInit() {
@@ -50,6 +51,10 @@ export class CreateSessionComponent implements OnInit {
       voters: []
     };
     this.saveNewSession.emit(session);
+  }
+
+  cancel() {
+    this.cancelAddSession.emit();
   }
 
 
