@@ -1,6 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {template} from '@angular/core/src/render3';
-import {templateJitUrl} from '@angular/compiler';
 import {ISession} from '../shared';
 
 @Component({
@@ -9,6 +7,6 @@ import {ISession} from '../shared';
 
 })
 
-export  class SessionListComponent{
+export  class SessionListComponent {
     @Input() sessions: ISession[];
 }
